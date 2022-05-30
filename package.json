@@ -5,16 +5,19 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "stompjs": "^2.3.3",
     "vue": "^3.0.0",
+    "vue-i18n": "^9.1.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
+    "@intlify/vue-i18n-loader": "^3.0.0",
     "@vue/cli-plugin-babel": "~4.5.13",
     "@vue/cli-plugin-eslint": "~4.5.13",
     "@vue/cli-plugin-router": "~4.5.13",
@@ -29,7 +32,8 @@
     "lint-staged": "^9.5.0",
     "node-sass": "^4.12.0",
     "prettier": "^2.2.1",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "vue-cli-plugin-i18n": "~2.3.1"
   },
   "eslintConfig": {
     "root": true,
@@ -46,14 +50,6 @@
     },
     "rules": {}
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
   "prettier": {
     "singleQuote": true,
     "semi": false,
@@ -61,6 +57,14 @@
     "jsxBracketSameLine": true,
     "arrowParens": "avoid",
     "endOfLine": "auto"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*.{js,jsx,vue}": [
